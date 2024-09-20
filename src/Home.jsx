@@ -5,7 +5,7 @@ import Speciality from "./components/home/Speciality"
 import SpecMenu from "./components/home/SpecMenu"
 import BookPlace from "./components/home/BookPlace"
 import ChefSlide from "./components/home/ChefSlide"
-import About from "./components/home/about"
+import AboutPizzon from './components/home/AboutPizzon'
 import './components/home/style.scss'
 import '../src/index.css'
 
@@ -22,7 +22,7 @@ function Home() {
             <SpecMenu />
             <BookPlace />
             <ChefSlide />
-            <About />
+            <AboutPizzon />
         </div>
     )
 }
