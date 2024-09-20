@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Pacifico&display=swap');
+
+
+$primary-orange: #fd9d3e;
+$primary-dark: #121619;
+$primary-white: #ffffff;
+$light: #0c0c0c44;
+$red: #ff0000;
+$grey: #2b2c2d;
+
+
+$header-font: 'PT Sans Narrow';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: $header-font;
+}

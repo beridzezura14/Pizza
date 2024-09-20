@@ -1,0 +1,15 @@
+.slick-dots{
+    list-style: none !important;
+
+}
+.slick-dots li button {
+    border: 1px solid #fd9d3e !important;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block !important; 
+
+}
+.slick-dots li.slick-active button{
+    background: #fd9d3e !important;
+}
