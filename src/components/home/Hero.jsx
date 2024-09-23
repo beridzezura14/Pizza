@@ -20,12 +20,14 @@ function Hero() {
             y: -150,
             stagger: 0.1,
             opacity: 0,
+            duration: 1,
 
         }, {
             delay: 2.2,
             y: 0,
             opacity: 1,
             stagger: 0.1,
+            duration: 1,
         })
         gsap.fromTo('.fade_up', {
             delay: 2.2,
