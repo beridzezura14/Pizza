@@ -17,6 +17,7 @@ import drink3 from '../../assets/img/drink/drink-3.png'
 
 // import salad1 from '../../assets/img/salad/salad-1.png'
 // import salad2 from '../../assets/img/salad/salad-2.png'
+
 import salad3 from '../../assets/img/salad/salad-3.png'
 import { useState } from 'react'
 
@@ -93,7 +94,7 @@ function SpecMenu() {
     return (
         <div className='spec__menu'>
             <div className='spec__menu__content'>
-                <div className='chef__head'>
+                <div className='menu__head'>
                     <p>Fresh From Pizzon</p>
                     <h2>OUR SPECIAL MENU</h2>
                 </div>

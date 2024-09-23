@@ -6,6 +6,7 @@ import SpecMenu from "./components/home/SpecMenu"
 import BookPlace from "./components/home/BookPlace"
 import ChefSlide from "./components/home/ChefSlide"
 import AboutPizzon from './components/home/AboutPizzon'
+import Footer from "./components/home/Footer"
 import './components/home/style.scss'
 import '../src/index.css'
 
@@ -23,6 +24,7 @@ function Home() {
             <BookPlace />
             <ChefSlide />
             <AboutPizzon />
+            <Footer />
         </div>
     )
 }

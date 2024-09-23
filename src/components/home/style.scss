@@ -355,7 +355,7 @@
     }
     .book__top{
         left: 0;
-        top: -50px;
+        top: -40px;
     }
     .book__bottom{
         left: 0;
@@ -406,10 +406,11 @@
                 
                 input, select{
                     padding: 10px;
-                    width: 100%;
+                    width: 100% !important;
                     border: 1px solid $primary-dark;
                     outline: none;
                     font-size: 18px;
+                    background-color: $primary-white;
                     
                 }
                 .select__number{
@@ -423,6 +424,8 @@
                     }
                     select{
                         appearance: none;
+                        background-color: $primary-white;
+
                     }
                 }
                 button{
@@ -441,7 +444,6 @@
         }
     }
 }
-
 .chef{
     background-color: $primary-dark;
     color: $primary-white;
@@ -484,9 +486,13 @@
     }
 
 }
-
 .about{
-
+    position: relative;
+    .img__absolute{
+        position: absolute;
+        width: 100%;
+        top: -40px;
+    }
     .about-content{
         padding: 5rem 0;
         max-width: 90%;
@@ -537,5 +543,88 @@
         padding: 2rem 0;
     }  
 
+
+}
+.footer{
+    background-color: $primary-dark;
+    color: $primary-white;
+
+    .footer__content{
+        max-width: 90%;
+        margin: auto;
+        text-align: center;
+        padding: 5rem 0;
+
+
+        .footer__main{
+            display: grid;
+            gap: 2rem;
+            padding-bottom: 2rem;
+
+            
+            .footer__logo{
+                
+                div{
+                    margin-top: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            }
+            .footer__menu{
+                ul{
+                    margin-top: 1rem;
+                    display: grid;
+                    gap: 10px;
+                    li{
+                        a{
+                            color: $primary-white;
+                        }
+                    }
+                }
+            }
+
+            .footer__hours{
+
+                .hours{
+                    max-width: 70%;
+                    margin: auto;
+                    padding-top: 1rem;
+                    display: grid;
+                    gap: 10px;
+
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+
+                        .closed{
+                            padding: 3px 15px;
+                            background-color: $primary-orange;
+                            color: $primary-dark;
+                        }
+                    }
+                }
+            }
+        }
+        .last__line{
+            border-top: 1px solid $grey;
+            padding-top: 2rem;
+
+            .icons{
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+
+                ion-icon{
+                    font-size: 25px;
+                    background-color: $grey;
+                    padding: 10px;
+                }
+            }
+            p{
+                margin-top: 1rem;
+            }
+        }
+    }
 
 }

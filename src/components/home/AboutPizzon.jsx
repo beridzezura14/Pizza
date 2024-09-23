@@ -1,8 +1,12 @@
 import aPizza from '../../assets/img/home-page/about-pizzon.png'
+import topDecor from '../../assets/img/home-page/book-top.png'
+
 
 function about() {
     return (
         <div className="about">
+            <img src={topDecor} alt="decor" className="img__absolute" />
+
             <div className="about-content">
                 <div className='about__head'>
                     <p>Fresh From Pizzon</p>
@@ -16,12 +20,6 @@ function about() {
                     <img className='about__img' src={aPizza} alt="about pizzon" />
                 </div>
             </div>
-
-            <footer>
-                <div>HOME</div>
-                <div>MENU</div>
-                <div>RESERVATION</div>
-            </footer>
         </div>
     )
 }
