@@ -1,19 +1,19 @@
-import bookTop from '../../assets/img/home-page/book-top.png'
-import bookBottom from '../../assets/img/home-page/book-bottom.png'
+// import bookTop from '../../assets/img/home-page/book-top.png'
+// import bookBottom from '../../assets/img/home-page/book-bottom.png'
 
 
 function BookPlace() {
     return (
         <div className="book">
-            <img className='book__top' src={bookTop} alt="top decor" />
+            {/* <img className='book__top' src={bookTop} alt="top decor" /> */}
             <div className="book__content">
                 <div className='book__head'>
                     <div className="book__text">
                         <p>Fresh From Pizzon</p>
                         <h2>BOOK ONLINE</h2>
                         <p>Elevate your dining experience with ease! Reserve a table at our restaurant, where exquisite cuisine meets inviting ambiance. Enjoy impeccable service and create memorable moments with your loved ones, ensuring a delightful and unforgettable mealtime</p>
-                        <div >
-                        phone: +995 555 11 12 22
+                        <div className='book__number'>
+                            phone: +995 555 11 12 22
                         </div>
                     </div>
                     <form>
@@ -38,7 +38,7 @@ function BookPlace() {
                     </form>
                 </div>
             </div>
-            <img className='book__bottom' src={bookBottom} alt="bottom decor" />
+            {/* <img className='book__bottom' src={bookBottom} alt="bottom decor" /> */}
         </div>
     )
 }

@@ -1,11 +1,11 @@
 import aPizza from '../../assets/img/home-page/about-pizzon.png'
-import topDecor from '../../assets/img/home-page/book-top.png'
+// import topDecor from '../../assets/img/home-page/book-top.png'
 
 
 function about() {
     return (
         <div className="about">
-            <img src={topDecor} alt="decor" className="img__absolute" />
+            {/* <img src={topDecor} alt="decor" className="img__absolute" /> */}
 
             <div className="about-content">
                 <div className='about__head'>

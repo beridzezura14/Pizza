@@ -4,7 +4,7 @@ import pizza from '../../assets/img/svg/pizza.svg'
 import car from '../../assets/img/svg/car.svg'
 import plat from '../../assets/img/svg/tepshi.svg'
 
-import bottom from '../../assets/img/home-page/order-bottom.png'
+// import bottom from '../../assets/img/home-page/order-bottom.png'
 
 
 const serviceList = [
@@ -42,7 +42,7 @@ function service() {
                    )) 
                 }
             </div>
-            <img className='bottom' src={bottom} alt="decor-bottom" />
+            {/* <img className='bottom' src={bottom} alt="decor-bottom" /> */}
         </div>
     )
 }

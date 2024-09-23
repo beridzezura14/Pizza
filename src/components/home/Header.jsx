@@ -34,13 +34,18 @@ function Header() {
                                     <span>0</span>
                                     <img className='cart__icon' src={cart} alt="cart" />
                                 </div>
-                                <img className='phone__icon' src={phone} alt="cart" />
+                                <div className='header__number'>
+                                    <div className='number_icon'> +995 555 11 12 22</div>
+                                    <img className='phone__icon' src={phone} alt="cart" />  
+                                </div>
                             </div>
                             <div className='menu__relative'>
                                 <ul className={isOpen ? "nav__items active" : "nav__items"}>
                                     <li><a href="">Home</a></li>
-                                    <li><a href="">Menu</a></li>
+                                    <li><a href="/Menu">Menu</a></li>
                                     <li><a href="">Reservation</a></li>
+                                    <li><a href="">About</a></li>
+                                    <li><a href="">Contact</a></li>
                                 </ul>
                             </div>
                         </div>

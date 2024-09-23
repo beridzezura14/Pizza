@@ -20,3 +20,17 @@ $header-font: 'PT Sans Narrow';
     list-style: none;
     font-family: $header-font;
 }
+
+.loader{
+    position: fixed;
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__home{
+    position: relative;
+    z-index: 1;
+}

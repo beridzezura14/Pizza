@@ -1,4 +1,4 @@
-
+import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -38,16 +38,36 @@ const chefList = [
 ]
 
 function ChefSlide() {
+    const [slidesToShow, setSlidesToShow] = useState(4); // Default value
+
+    const updateSlidesToShow = () => {
+      if (window.innerWidth < 768) {
+        setSlidesToShow(1); // For mobile devices
+      } else if (window.innerWidth < 1024) {
+        setSlidesToShow(2); // For tablets
+      } else {
+        setSlidesToShow(4); // For larger screens
+      }
+    };
+  
+    useEffect(() => {
+      updateSlidesToShow(); // Update on mount
+      window.addEventListener('resize', updateSlidesToShow); // Update on resize
+      return () => window.removeEventListener('resize', updateSlidesToShow);
+    }, []);
+
 
     const slide = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: slidesToShow,
         slidesToScroll: 1,
         autoplay: true, 
         autoplaySpeed: 5000, 
         arrows: false,
+
+
     };
 
     return (
@@ -57,7 +77,7 @@ function ChefSlide() {
                     <p>Fresh From Pizzon</p>
                     <h2>OUR SPECIAL MENU</h2>
                 </div >
-                <div >
+                <div className='chefs'>
                     <Slider {...slide}>
                         {
                             chefList.map((item) => (
