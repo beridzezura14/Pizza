@@ -34,3 +34,22 @@ $header-font: 'PT Sans Narrow';
     position: relative;
     z-index: 1;
 }
+
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+
+::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary-orange; 
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $primary-orange; 
+}
