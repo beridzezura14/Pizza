@@ -18,26 +18,28 @@ function Hero() {
         gsap.fromTo('.banner', {
             delay: 2.2,
             y: -150,
-            stagger: 0.1,
+            stagger: 0.3,
             opacity: 0,
-            duration: 1,
+            duration: 1.1,
 
         }, {
             delay: 2.2,
             y: 0,
             opacity: 1,
-            stagger: 0.1,
-            duration: 1,
+            stagger: 0.3,
+            duration: 1.1,
         })
         gsap.fromTo('.fade_up', {
-            delay: 2.2,
+            delay: 2.3,
+            duration: 1,
             y: 150,
             stagger: 0.1,
             opacity: 0,
             ease: 'power1.inOut'
 
         }, {
-            delay: 2.2,
+            delay: 2.3,
+            duration: 1,
             y: 0,
             opacity: 1,
             stagger: 0.1,

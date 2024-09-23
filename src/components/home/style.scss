@@ -646,7 +646,6 @@
 }
 
 
-
 @media (min-width: 768px){
 
     .header{
@@ -886,12 +885,12 @@
         }
     }
     .hero{
-        padding-top: 8rem; 
+        padding-top: 7rem; 
         .hero__content{
             position: relative;
             .slogan{
                 h1{
-                    font-size: 120px;
+                    font-size: 80px;
                 }
             }
             p{
@@ -900,7 +899,7 @@
             }
     
             .img__content{
-                margin-top: 1rem;
+                margin-top: 0rem;
                 position: relative;
     
                 .banner{
@@ -915,7 +914,7 @@
                 }
                 .banner__2{
                     right: 15%;
-                    bottom: 50%;
+                    bottom: 45%;
                     width: 300px;
                 }
                 .banner__3{
@@ -934,6 +933,35 @@
                 }
             }
     
+        }
+    }
+
+    .spec__menu{
+
+    
+        .spec__menu__content{
+
+    
+            .select__items{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+        
+            }
+        }
+    }
+
+}
+
+
+@media (min-width: 1400px) {
+    .hero{
+        padding-top: 8rem; 
+        .hero__content{
+            .slogan{
+                h1{
+                    font-size: 120px;
+                }
+            }
         }
     }
 }
