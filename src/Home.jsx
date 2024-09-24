@@ -1,4 +1,4 @@
-import Header from "./components/home/Header"
+import Header from "./components/Header"
 import Hero from "./components/home/Hero"
 import Service from "./components/home/Service"
 import Speciality from "./components/home/Speciality"
@@ -6,7 +6,7 @@ import SpecMenu from "./components/home/SpecMenu"
 import BookPlace from "./components/home/BookPlace"
 import ChefSlide from "./components/home/ChefSlide"
 import AboutPizzon from './components/home/AboutPizzon'
-import Footer from "./components/home/Footer"
+import Footer from "./components/Footer"
 import './components/home/style.scss'
 import '../src/index.css'
 
