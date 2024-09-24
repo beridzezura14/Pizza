@@ -167,7 +167,7 @@ function MainMenu({addToCart}) {
                 <div className='menu__page__head'>
                     <h1>Menu</h1>
                 </div>
-                <div>
+                <div className='padding'>
                     <form>
                         <div className='select__arr'>
                             <select value={category} onChange={(e) => setCategory(e.target.value)}>
