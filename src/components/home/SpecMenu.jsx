@@ -127,7 +127,7 @@ function SpecMenu() {
                                 <div 
                                     key={item.id}
                                 >
-                                    <img src={item.img} alt="" />
+                                    <img src={item.img} loading="lazy" alt={item.name} />
                                     <h3>{item.name}</h3>
                                     <p>{item.price} $</p>
                                 </div>
