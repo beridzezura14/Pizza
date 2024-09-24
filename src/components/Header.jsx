@@ -1,10 +1,11 @@
 import cart from '../assets/img/svg/cart.svg'
 import phone from '../assets/img/svg/phone.png'
 import logo from '../assets/img/home-page/logo.png'
+import PropTypes from 'prop-types';
 
 import { useState } from 'react'
 
-function Header() {
+const Header = ({ itemCount }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => {
@@ -32,7 +33,10 @@ function Header() {
                             <div className='icons'>
                                 <div className='item__quantity'>
                                     <a href="/Cart">
-                                    <span>0</span>
+                                    <span>
+                                        
+                                        
+                                        {itemCount === 0 ? 0 : itemCount}</span>
                                     <img className='cart__icon' src={cart} alt="cart" /></a>
                                 </div>
                                 <div className='header__number'>
@@ -44,6 +48,7 @@ function Header() {
                                 <ul className={isOpen ? "nav__items active" : "nav__items"}>
                                     <li><a href="/Home">Home</a></li>
                                     <li><a href="/Menu">Menu</a></li>
+                                    <li><a href="/Cart">Cart</a></li>
                                     <li><a href="">Reservation</a></li>
                                     <li><a href="">About</a></li>
                                     <li><a href="">Contact</a></li>
@@ -60,4 +65,8 @@ function Header() {
     )
 }
 
+
+Header.propTypes = {
+    itemCount: PropTypes.number.isRequired, // Validate itemCount prop
+};
 export default Header

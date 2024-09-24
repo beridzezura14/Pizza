@@ -14,135 +14,136 @@ import drink4 from '../../assets/img/drink/drink-6.png'
 import salad1 from '../../assets/img/salad/salad-1.png'
 import salad2 from '../../assets/img/salad/salad-2.png'
 import { useState } from 'react';
-
-const menuItem = [
-    {
-        id: 1,
-        img: pizza5,
-        name: "GARLINK PIZZA",
-        price: "15.00",
-        category: "pizza"
-    },
-    {
-        id: 2,
-        img: burger4,
-        name: "FRESH burger",
-        price: "20.00",
-        category: "burger"
-    },
-    {
-        id: 3,
-        img: drink3,
-        name: "SPECIAL DRINK",
-        price: "5.00",
-        category: "drink"
-    },
-    {
-        id: 4,
-        img: salad2,
-        name: "GREEN SALAD M",
-        price: "13.00",
-        category: "salad"
-    },
-    {
-        id: 5,
-        img: pizza2,
-        name: "Ggreek pizza",
-        price: "18.00",
-        category: "pizza"
-    },
-    {
-        id: 6,
-        img: pizza3,
-        name: "GARLINK PIZZA M",
-        price: "20.00",
-        category: "pizza"
-    },
-    {
-        id: 7,
-        img: burger2,
-        name: "veggie combo",
-        price: "22.00",
-        category: "burger"
-    },
-    {
-        id: 8,
-        img: drink2,
-        name: "COCA-COLA",
-        price: "3.00",
-        category: "drink"
-    },
+import PropTypes from 'prop-types';
 
 
-    {
-        id: 9,
-        img: pizza1,
-        name: "GARLINK PIZZA N",
-        price: "25.00",
-        category: "pizza"
-    },
-    {
-        id: 10,
-        img: burger1,
-        name: "FRESH burger 2X",
-        price: "27.00",
-        category: "burger"
-    },
-    {
-        id: 11,
-        img: drink1,
-        name: "SPECIAL DRINK C",
-        price: "2.00",
-        category: "drink"
-    },
-    {
-        id: 12,
-        img: salad2,
-        name: "GREEN SALAD",
-        price: "14.00",
-        category: "salad"
-    },
-    {
-        id: 13,
-        img: drink4,
-        name: "ICE CREAM",
-        price: "3.00",
-        category: "drink"
-    },
-    {
-        id: 14,
-        img: pizza3,
-        name: "GARLINK PIZZA",
-        price: "27.00",
-        category: "pizza"
-    },
-    {
-        id: 15,
-        img: burger3,
-        name: "veggie combo mix",
-        price: "14.00",
-        category: "burger"
-    },
-    {
-        id: 16,
-        img: pizza4,
-        name: "TRADICON PIZZA",
-        price: "15.00",
-        category: "pizza"
-    },
-    {
-        id: 17,
-        img: salad1,
-        name: "SALAD",
-        price: "15.00",
-        category: "salad"
-    },
+
+function MainMenu({addToCart}) {
+    const menuItem = [
+        {
+            id: 1,
+            img: pizza5,
+            name: "GARLINK PIZZA",
+            price: "15.00",
+            category: "pizza"
+        },
+        {
+            id: 2,
+            img: burger4,
+            name: "FRESH burger",
+            price: "20.00",
+            category: "burger"
+        },
+        {
+            id: 3,
+            img: drink3,
+            name: "SPECIAL DRINK",
+            price: "5.00",
+            category: "drink"
+        },
+        {
+            id: 4,
+            img: salad2,
+            name: "GREEN SALAD M",
+            price: "13.00",
+            category: "salad"
+        },
+        {
+            id: 5,
+            img: pizza2,
+            name: "Ggreek pizza",
+            price: "18.00",
+            category: "pizza"
+        },
+        {
+            id: 6,
+            img: pizza3,
+            name: "GARLINK PIZZA M",
+            price: "20.00",
+            category: "pizza"
+        },
+        {
+            id: 7,
+            img: burger2,
+            name: "veggie combo",
+            price: "22.00",
+            category: "burger"
+        },
+        {
+            id: 8,
+            img: drink2,
+            name: "COCA-COLA",
+            price: "3.00",
+            category: "drink"
+        },
     
     
-]
-
-
-function MainMenu() {
+        {
+            id: 9,
+            img: pizza1,
+            name: "GARLINK PIZZA N",
+            price: "25.00",
+            category: "pizza"
+        },
+        {
+            id: 10,
+            img: burger1,
+            name: "FRESH burger 2X",
+            price: "27.00",
+            category: "burger"
+        },
+        {
+            id: 11,
+            img: drink1,
+            name: "SPECIAL DRINK C",
+            price: "2.00",
+            category: "drink"
+        },
+        {
+            id: 12,
+            img: salad2,
+            name: "GREEN SALAD",
+            price: "14.00",
+            category: "salad"
+        },
+        {
+            id: 13,
+            img: drink4,
+            name: "ICE CREAM",
+            price: "3.00",
+            category: "drink"
+        },
+        {
+            id: 14,
+            img: pizza3,
+            name: "GARLINK PIZZA",
+            price: "27.00",
+            category: "pizza"
+        },
+        {
+            id: 15,
+            img: burger3,
+            name: "veggie combo mix",
+            price: "14.00",
+            category: "burger"
+        },
+        {
+            id: 16,
+            img: pizza4,
+            name: "TRADICON PIZZA",
+            price: "15.00",
+            category: "pizza"
+        },
+        {
+            id: 17,
+            img: salad1,
+            name: "SALAD",
+            price: "15.00",
+            category: "salad"
+        },
+        
+        
+    ]
 
     const [searchTerm, setSearchTerm] = useState('');
     const [category, setCategory] = useState('');
@@ -167,7 +168,6 @@ function MainMenu() {
                     <h1>Menu</h1>
                 </div>
                 <div>
-
                     <form>
                         <div className='select__arr'>
                             <select value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -202,7 +202,7 @@ function MainMenu() {
                                     <p>{item.price} $</p>
                                     <div className='cart__relative'>
                                         <div className='buy'>
-                                            <button>ADD TO CART</button>
+                                            <button onClick={() => addToCart(item)} >ADD TO CART</button>
                                             <button>ORDER</button>
                                         </div>
                                     </div>
@@ -217,4 +217,8 @@ function MainMenu() {
     )
 }
 
+
+MainMenu.propTypes = {
+    addToCart: PropTypes.func.isRequired, // Define addToCart as a required function
+};
 export default MainMenu

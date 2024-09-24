@@ -1,6 +1,7 @@
-import Header from "./components/Header"
+
 import Footer from "./components/Footer"
 import MainMenu from "./components/menu/MainMenu";
+import PropTypes from 'prop-types';
 import './components/menu/menu.scss'
 
 
@@ -9,7 +10,7 @@ import loader from './assets/img/home-page/loader.gif'
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 
-function Menu() {
+const Menu = ({ addToCart }) => {
 
     useGSAP(() => {
         gsap.fromTo(".main__home" , {
@@ -28,12 +29,15 @@ function Menu() {
                 <img src={loader} alt="" />
             </div>
             <div className="main__home">
-                <Header />
-                <MainMenu />
+                <MainMenu addToCart={addToCart}/>
                 <Footer />
             </div>
         </div>
     )
 }
+
+Menu.propTypes = {
+    addToCart: PropTypes.func.isRequired, // Define addToCart as a required function
+  };
 
 export default Menu

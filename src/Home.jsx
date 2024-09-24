@@ -1,4 +1,4 @@
-import Header from "./components/Header"
+
 import Hero from "./components/home/Hero"
 import Service from "./components/home/Service"
 import Speciality from "./components/home/Speciality"
@@ -38,7 +38,7 @@ function Home() {
                 <img src={loader} alt="" />
             </div>
             <div className="main__home">
-                <Header />
+
                 <Hero />
                 <Service />
                 <Speciality />
