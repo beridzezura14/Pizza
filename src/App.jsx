@@ -8,6 +8,7 @@ import Cart from "./Cart";
 import Header from "./components/Header";
 
 function App() {
+  
 
   const [cartItems, setCartItems] = useState(() => {
 
@@ -74,8 +75,6 @@ function App() {
   };
 
 
-
-
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
@@ -89,17 +88,23 @@ function App() {
   return (
     <>
       <Router>
-        <Header itemCount={cartItems.length} /> 
+        <Header itemCount={cartItems.length}
+                items={cartItems} 
+                removeFromCart={removeFromCart}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+                clearCart={clearCart}/> 
         <Routes>
           <Route path="/Home" element={<Home />}></Route>
-          <Route path="/Menu" element={<Menu addToCart={addToCart} />} >   </Route>
+          <Route path="/Menu" element={
+            <Menu addToCart={addToCart}/>} >   </Route>
           <Route path="/Cart" element={
             <Cart items={cartItems} 
                   removeFromCart={removeFromCart}
                   increaseQuantity={increaseQuantity}
                   decreaseQuantity={decreaseQuantity}
                   clearCart={clearCart}
-                  />} >  </Route>
+                  />} > </Route>
 
 
         </Routes>

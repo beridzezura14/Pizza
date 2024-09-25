@@ -50,8 +50,6 @@ const Cart = ({ items, removeFromCart, increaseQuantity, decreaseQuantity, clear
                     {
                         items.length === 0 ? "" : <button className="cart__buy">Buy</button>
                     }
-
-                    
                 </div>
             </div>
 

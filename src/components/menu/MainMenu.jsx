@@ -14,6 +14,7 @@ import drink4 from '../../assets/img/drink/drink-6.png'
 import salad1 from '../../assets/img/salad/salad-1.png'
 import salad2 from '../../assets/img/salad/salad-2.png'
 import { useState } from 'react';
+
 import PropTypes from 'prop-types';
 
 
@@ -148,13 +149,14 @@ function MainMenu({addToCart}) {
     const [searchTerm, setSearchTerm] = useState('');
     const [category, setCategory] = useState('');
 
+
     const handleSearch = (event) => {
       setSearchTerm(event.target.value);
     };
     const cencel = () => {
         setSearchTerm('');
     };
-  
+      
     const filteredItems = menuItem.filter((item ) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (category === '' || item.category === category)
@@ -220,5 +222,7 @@ function MainMenu({addToCart}) {
 
 MainMenu.propTypes = {
     addToCart: PropTypes.func.isRequired, // Define addToCart as a required function
+
+
 };
 export default MainMenu
