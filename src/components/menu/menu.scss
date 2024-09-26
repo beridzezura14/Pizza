@@ -46,6 +46,10 @@
                     position: relative;
                     z-index: 11;
                     background-color: transparent;
+                    
+                    option{
+                        color: $primary-dark;
+                    }
     
                 }
                 ion-icon{
