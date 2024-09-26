@@ -61,15 +61,15 @@ const Header = ({ itemCount, items, removeFromCart, increaseQuantity, decreaseQu
                             </div>
                         </div>
                         <div className="sum__clean">
+                            <h4 className="sumPrice" >All: $ {items.reduce((total, item) => total + item.price * item.quantity, 0)}</h4>
                             <div>
-                                <h4 className="sumPrice" >All: ${items.reduce((total, item) => total + item.price * item.quantity, 0)}</h4>
                                 {
                                     items.length === 0 ? "" : <button className="Clean__btn" onClick={clearCart}>Delete All</button>
                                 }
-                            </div>
                             {
                                 items.length === 0 ? "" : <button className="cart__buy">Buy</button>
                             }
+                            </div>
                         </div>
                 </div>
 

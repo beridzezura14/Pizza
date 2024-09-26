@@ -26,56 +26,65 @@ function MainMenu({addToCart}) {
             img: pizza5,
             name: "GARLINK PIZZA",
             price: "15.00",
-            category: "pizza"
+            category: "pizza",
+            details: ["Bread", "melted cheese", "mushrooms", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 2,
             img: burger4,
             name: "FRESH burger",
             price: "20.00",
-            category: "burger"
+            category: "burger",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 3,
             img: drink3,
             name: "SPECIAL DRINK",
             price: "5.00",
-            category: "drink"
+            category: "drink",
+            details: ["Orange", "Shugar"]
+
         },
         {
             id: 4,
             img: salad2,
             name: "GREEN SALAD M",
             price: "13.00",
-            category: "salad"
+            category: "salad",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 5,
             img: pizza2,
             name: "Ggreek pizza",
             price: "18.00",
-            category: "pizza"
+            category: "pizza",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 6,
             img: pizza3,
             name: "GARLINK PIZZA M",
             price: "20.00",
-            category: "pizza"
+            category: "pizza",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 7,
             img: burger2,
             name: "veggie combo",
             price: "22.00",
-            category: "burger"
+            category: "burger",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 8,
             img: drink2,
             name: "COCA-COLA",
             price: "3.00",
-            category: "drink"
+            category: "drink",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
     
     
@@ -84,63 +93,72 @@ function MainMenu({addToCart}) {
             img: pizza1,
             name: "GARLINK PIZZA N",
             price: "25.00",
-            category: "pizza"
+            category: "pizza",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 10,
             img: burger1,
             name: "FRESH burger 2X",
             price: "27.00",
-            category: "burger"
+            category: "burger",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 11,
             img: drink1,
             name: "SPECIAL DRINK C",
             price: "2.00",
-            category: "drink"
+            category: "drink",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 12,
             img: salad2,
             name: "GREEN SALAD",
             price: "14.00",
-            category: "salad"
+            category: "salad",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 13,
             img: drink4,
             name: "ICE CREAM",
             price: "3.00",
-            category: "drink"
+            category: "drink",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 14,
             img: pizza3,
             name: "GARLINK PIZZA",
             price: "27.00",
-            category: "pizza"
+            category: "pizza",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 15,
             img: burger3,
             name: "veggie combo mix",
             price: "14.00",
-            category: "burger"
+            category: "burger",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 16,
             img: pizza4,
             name: "TRADICON PIZZA",
             price: "15.00",
-            category: "pizza"
+            category: "pizza",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         {
             id: 17,
             img: salad1,
             name: "SALAD",
             price: "15.00",
-            category: "salad"
+            category: "salad",
+            details: ["Bread", "melted cheese", "beef", "pepperoni", "lettuce", "olive oil",]
         },
         
         
@@ -149,7 +167,15 @@ function MainMenu({addToCart}) {
     const [searchTerm, setSearchTerm] = useState('');
     const [category, setCategory] = useState('');
 
+    const [visibleProductId, setVisibleProductId] = useState(null); // აკონტროლებს რომელ პროდუქტის ინგრედიენტები გამოვაჩინოთ
 
+    const handleShowIngredients = (id) => {
+      if (visibleProductId === id) {
+        setVisibleProductId(null); // თუ უკვე ჩანს, მაშინ დამალე
+      } else {
+        setVisibleProductId(id); // სხვა პროდუქტი აირჩიე
+      }
+    };
     const handleSearch = (event) => {
       setSearchTerm(event.target.value);
     };
@@ -168,6 +194,7 @@ function MainMenu({addToCart}) {
             <div className="menu__hero">
                 <div className='menu__page__head'>
                     <h1>Menu</h1>
+                    <p>Home / Menu</p>
                 </div>
                 <div className='padding'>
                     <form>
@@ -205,9 +232,22 @@ function MainMenu({addToCart}) {
                                     <div className='cart__relative'>
                                         <div className='buy'>
                                             <button onClick={() => addToCart(item)} >ADD TO CART</button>
-                                            <button>ORDER</button>
+                                            <button onClick={() => handleShowIngredients(item.id)} className='details'>DETAILS</button>
                                         </div>
                                     </div>
+
+                                    {visibleProductId === item.id && (
+                                        <ul>
+                                        {item.details.map((ingredient, index) => (
+    
+                                            <div key={index} className='details__item'>
+                                                <ion-icon onClick={() => handleShowIngredients(item.id)} name="close-outline"></ion-icon>
+                                                 <h4>{item.name}</h4>
+                                                <span><b>Ingredients : </b>{item.details.join(", ")}</span>
+                                            </div>
+                                        ))}
+                                        </ul>
+                                    )}
 
                                 </div>
                         )) 
